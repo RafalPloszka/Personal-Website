@@ -1,0 +1,410 @@
+@font-face {
+  font-family: 'dk_crayon_crumbleregular';
+  src: local("dk_crayon_crumbleregular"), url("dkcrayoncrumble-ddll-webfont.woff2") format("woff2"), url("dkcrayoncrumble-ddll-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+000-5FF;
+  /* Latin glyphs */
+}
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+}
+
+body {
+  background-image: url("../media//blackboard.jpg");
+  background-color: black;
+  font-family: 'dk_crayon_crumbleregular';
+  color: white;
+  overflow-x: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  font-size: 1vw;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  top: 0;
+  z-index: 10;
+  padding: 0;
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.navbar li {
+  display: inline;
+  padding-left: 2em;
+}
+
+a {
+  display: inline-block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/*a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+a:visited {
+    color: white;
+}
+*/
+.current {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.un {
+  display: inline-block;
+}
+
+.un:after {
+  content: '';
+  width: 0px;
+  height: 0.1em;
+  display: block;
+  background: white;
+  transition: 0.4s;
+}
+
+.un:hover:after {
+  width: 100%;
+}
+
+#welcome {
+  font-size: 3vw;
+  margin-left: 3em;
+  margin-top: 3em;
+}
+
+.caption {
+  text-align: center;
+  line-height: 1em;
+  font-size: 10vw;
+  letter-spacing: 0.29em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.captionf {
+  height: 1em;
+  font-size: 10vw;
+  letter-spacing: 0.29em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+#math-caption {
+  line-height: 1em;
+  font-size: 10vw;
+  letter-spacing: 0.29em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  border-style: dotted;
+}
+
+#logo {
+  background-image: url("../media/pinkgreen.png");
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+
+.description {
+  font-size: 16px;
+  margin-left: 48px;
+  margin-top: 5em;
+  letter-spacing: 0.05em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 2em;
+  display: inline-block;
+  height: min-content;
+}
+
+.captionm {
+  text-align: center;
+  line-height: 1em;
+  font-size: 10vw;
+  letter-spacing: 0.29em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 90%;
+  justify-content: center;
+}
+
+.tut {
+  width: 100%;
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+
+.diploma {
+  width: 100%;
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 999;
+  transition: all 0.3s;
+}
+
+.row {
+  height: min-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.portfolio {
+  height: 900px;
+  width: 800px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 2em;
+  margin-left: 48px;
+  margin-top: 5em;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+.overview {
+  height: 800px;
+  display: flex;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ph {
+  transition: all .3s;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.ph:hover {
+  transform: scale(1.15);
+  transform-style: border;
+  border: solid #00ebdf;
+  filter: none;
+}
+
+.ph a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  /* No underlines on the link */
+  z-index: 10;
+  /* Places the link above everything else in the div */
+  background-color: #FFF;
+  /* Fix to make div clickable in IE */
+  opacity: 0;
+  /* Fix to make div clickable in IE */
+  filter: alpha(opacity=1);
+  /* Fix to make div clickable in IE */
+}
+
+.photo_container {
+  padding: 1em;
+  font-size: 30px;
+}
+
+#gallery1 {
+  height: 250px;
+}
+
+#gallery2 {
+  height: 175px;
+}
+
+#gallery3 {
+  width: 225px;
+}
+
+#gallery4 {
+  height: 200px;
+}
+
+#contact {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+}
+
+.gh-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+}
+
+.portfolio-photos {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+  height: 575px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-object {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  height: 550px;
+  width: 400px;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.up {
+  border: solid #00ebdf;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70%;
+}
+
+.down {
+  border: solid pink;
+  height: 30%;
+}
+
+.transition-fade {
+  opacity: 1;
+  transition: 0.5s;
+  transform: translateX(0%);
+  transform-origin: left;
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateX(0%);
+}
+
+.transition-swipe {
+  transition: 0.5s;
+  transform: translateY(0%);
+}
+
+html.is-animating .transition-swipe {
+  transform: translateY(100%);
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* For desktop: */
+  #logo {
+    width: 175px;
+    height: 175px;
+  }
+  .description {
+    font-size: 25px;
+  }
+  .navbar {
+    font-size: 2.5vw;
+  }
+  .tut:hover {
+    cursor: zoom-in;
+    transform: translate(150px, -120px) scale(2.5);
+    position: relative;
+    z-index: 999;
+  }
+  .captionf {
+    left: auto;
+    right: 0;
+  }
+  .diploma:hover {
+    cursor: zoom-in;
+    transform: translateX(60%) scale(3);
+    position: relative;
+    z-index: 999;
+  }
+  .portfolio {
+    height: min-content;
+  }
+  .overview {
+    height: 300px;
+  }
+  .ph {
+    height: 60%;
+    width: 240px;
+  }
+  #gallery1 {
+    height: 500px;
+  }
+  #gallery2 {
+    height: 350px;
+  }
+  #gallery3 {
+    width: 450px;
+  }
+  #gallery4 {
+    height: 400px;
+  }
+}
